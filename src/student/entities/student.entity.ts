@@ -36,8 +36,8 @@ export class Student {
   age: number;
   
 
-  @ManyToMany(() => Course)
+  @ManyToMany(() => Course, course=>course.students)
   @JoinTable()
-  course: Course[];
+  courses: Course[];
 
 }

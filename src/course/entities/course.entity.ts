@@ -31,11 +31,11 @@ export class Course {
   languge: string;
   @Column()
   duration: number;
-  @ManyToOne(() => Professor)
+  @ManyToOne(() => Professor, professor=>professor.courses)
   professor: Professor;
 
-  @ManyToMany(() => Student)
+  @ManyToMany(() => Student, student=>student.courses)
  
-  student: Student[];
+  students: Student[];
 
 }
